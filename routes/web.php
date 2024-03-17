@@ -24,7 +24,7 @@ Route::controller(ThemeController::class)->name('theme.')->group(function (){
     Route::get('/contact','contact')->name('contact');
     Route::get('/single-blog','singleBlog')->name('singleBlog');
 });
-
+#kk
 
 Route::post('/subscriber/store',[SubscriberController::class,'store'])->name('subscriber.store');
 
