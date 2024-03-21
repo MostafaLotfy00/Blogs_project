@@ -31,7 +31,7 @@
 
                                     @foreach ($categories as $category)
                                         <li class="nav-item @yield('category-active') "><a class="nav-link"
-                                                href="{{ route('theme.category') }}">{{ $category->name }}</a></li>
+                                                href="{{ route('theme.category',['id'=> $category->id]) }}">{{ $category->name }}</a></li>
                                     @endforeach
                     
                                 </ul>
