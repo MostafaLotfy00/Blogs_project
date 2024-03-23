@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/vendors/linericon/style.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/vendors/owl-carousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/vendors/owl-carousel/owl.carousel.min.css">
+    
   
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
   </head>

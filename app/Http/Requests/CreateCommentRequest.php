@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreContactRequest extends FormRequest
+class CreateCommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,10 @@ class StoreContactRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:contacts,email',
-            'subject'=> '',
-            'message'=> '',
+            'email' => 'required|lowercase|email',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+            'blog_id' => 'required| exists:blogs,id'
         ];
     }
 }

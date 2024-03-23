@@ -1,5 +1,6 @@
  @php
          $categories = App\Models\Category::get();
+         $blogs= App\Models\Blog::get()->all();
  @endphp
  
  <!-- Start Blog Post Siddebar -->
@@ -37,7 +38,9 @@
                 <li>
                     <a href="{{ route('theme.category',['id'=> $category->id]) }}" class="d-flex justify-content-between">
                         <p>{{ $category->name }}</p>
-                        <p>(03)</p>
+                        <p>{{ count(array_filter($blogs, function($item) use($category){
+                            return $item['category_id'] == $category->id;
+                        })) }}</p>
                        </a>
                    </li>
                 @endforeach

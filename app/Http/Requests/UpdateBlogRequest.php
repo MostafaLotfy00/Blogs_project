@@ -3,8 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
-class StoreContactRequest extends FormRequest
+class UpdateBlogRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +22,23 @@ class StoreContactRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:contacts,email',
-            'subject'=> '',
-            'message'=> '',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'category_id' => 'required|exists:categories,id',
+            'description'=> 'required',
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'category_id'=> 'Blog Category'
+        ];
+    }
+
+    // public function messages()
+    // {
+    //     return [
+    //         'category_id.required' => 'The Blog category is required'
+    //     ];
+    // }
 }
