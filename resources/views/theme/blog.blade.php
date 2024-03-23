@@ -15,7 +15,7 @@
                 <div class="col-lg-8">
                     <div class="main_blog_details">
                         <img class="{{ asset('assets') }}/img-fluid" src="{{ asset("storage/blogs/$blog->image") }}"
-                            alt="">
+                          width= "700px" height= "400px"  alt="">
                         <a href="#">
                             <h4>{{ $blog->name }}</h4>
                         </a>

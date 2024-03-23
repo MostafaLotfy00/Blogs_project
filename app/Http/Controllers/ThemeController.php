@@ -9,8 +9,10 @@ use App\Models\Category;
 class ThemeController extends Controller
 {
     public function index() {
-        $blogs= Blog::paginate(4);
-        return view('theme.index',compact('blogs'));
+        //$blogs= Blog::orderBy('created_at', 'desc')->paginate(4);
+        $blogs= Blog::latest()->paginate(4);
+        $recentBlogs= Blog::latest()->take(4)->get();
+        return view('theme.index',compact('blogs','recentBlogs'));
     }
     public function category($id) {
         $categoryName= Category::find($id)->name;
